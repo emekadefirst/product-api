@@ -26,6 +26,8 @@ class CategorySerializer(BaseSerializer):
         extra_kwargs = {"id": {"read_only": True}}
 
 class ProductSerializer(BaseSerializer):
+    brand = serializers.SlugRelatedField(slug_field="name", queryset=Brand.objects.all())
+    category = serializers.SlugRelatedField(slug_field="name", queryset=Category.objects.all())
     class Meta:
         model = Product
         fields = ["id", "name", "brand", "category", "image", "description", "price", "created_at"]
