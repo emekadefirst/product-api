@@ -9,7 +9,6 @@ class UserSerializer(serializers.ModelSerializer):
         fields = [
             "id",
             "email",
-            "role",
             "username",
             "phone_number",
             "password",
@@ -25,7 +24,6 @@ class SignUpSerializer(serializers.ModelSerializer):
             "username",
             "phone_number",
             "password",
-            "role",
             "created_at",
         ]
         extra_kwargs = {
