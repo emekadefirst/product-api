@@ -27,7 +27,6 @@ class RegisterUser(APIView):
                 "email": user.email,
                 "phone_number": user.phone_number,
                 "username": user.username,
-                "role": user.role
             }
             return Response(
                 {
@@ -57,7 +56,6 @@ class LoginUser(APIView):
             user_data = {
                 "id": user.id,
                 "email": user.email,
-                "role": user.role,
                 "phone_number": user.phone_number,
                 "username": user.username,
             }
